@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alan – Filmowanie | Fotografia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: #0f0f0f;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #7a5cff;
+    }
+
+    header {
+      height: 100vh;
+      background: url('01.jpg') center/cover no-repeat;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.65);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      animation: fadeIn 2s ease;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #7a5cff, #4ab3ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #ccc;
+    }
+
+    .section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      border-left: 4px solid #7a5cff;
+      padding-left: 0.8rem;
+    }
+
+    /* Galeria zdjęć */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      transition: transform 0.4s ease, box-shadow 0.4s;
+    }
+
+    .gallery img:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+    }
+
+    /* Shortsy */
+    .shorts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .short-card {
+      background: #1a1a1a;
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .short-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+    }
+
+    .short-card a {
+      color: #7a5cff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Oferty */
+    .offers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .offer-card {
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .offer-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+    }
+
+    .offer-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, #7a5cff, #4ab3ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .offer-card p {
+      margin: 0.5rem 0;
+      color: #ccc;
+    }
+
+    .offer-card small {
+      display: block;
+      margin-top: 1rem;
+      color: #777;
+      font-size: 0.85rem;
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div><strong>ALAN</strong></div>
+    <div>
+      <a href="#o-mnie">O mnie</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#shortsy">Shortsy</a>
+      <a href="#oferta">Oferta</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero-content">
+      <h1>Filmowanie. Fotografia. Montaż.</h1>
+      <p>Tworzę obrazy, które zostają w pamięci</p>
+    </div>
+  </header>
+
+  <section class="section" id="o-mnie">
+    <h2>O mnie</h2>
+    <p>Cześć! Nazywam się Alan, mam 15 lat i zajmuję się filmowaniem, montażem oraz fotografią. Pasjonuję się tworzeniem dynamicznych ujęć i emocjonalnych historii, które trafiają prosto do odbiorcy.</p>
+    <p>Pracuję na terenie powiatu Ostrołęckiego i Warszawy.</p>
+  </section>
+
+  <section class="section" id="portfolio">
+    <h2>Portfolio – Zdjęcia</h2>
+    <div class="gallery">
+      <img src="alan.png" alt="Zdjęcie 1">
+      <img src="Alan 2.jpg" alt="Zdjęcie 2">
+      <img src="Alan 7.jpg" alt="Zdjęcie 3">
+    </div>
+  </section>
+
+  <section class="section" id="shortsy">
+    <h2>Shortsy</h2>
+    <div class="shorts-grid">
+      <div class="short-card"><a href="https://youtube.com/shorts/zgXkDegyru0" target="_blank">Short #1</a></div>
+      <div class="short-card"><a href="https://youtube.com/shorts/G6Nez0MGRKg" target="_blank">Short #2</a></div>
+      <div class="short-card"><a href="https://youtube.com/shorts/wxkCjnGIugE" target="_blank">Short #3</a></div>
+      <div class="short-card"><a href="https://youtube.com/shorts/coeywxv1lgA" target="_blank">Short #4</a></div>
+      <div class="short-card"><a href="https://www.youtube.com/shorts/X1mOcfx0WAE" target="_blank">Short #5</a></div>
+    </div>
+  </section>
+
+  <section class="section" id="oferta">
+    <h2>Oferta</h2>
+    <div class="offers">
+      <div class="offer-card">
+        <h3>Pakiet Start</h3>
+        <p>1 rolka wideo</p>
+        <p>Cena: 100 zł</p>
+        <small>*Przedpłata 50%*</small>
+      </div>
+      <div class="offer-card">
+        <h3>Pakiet Standard</h3>
+        <p>3 rolki wideo</p>
+        <p>Cena: 250 zł</p>
+        <small>*Przedpłata 50%*</small>
+      </div>
+      <div class="offer-card">
+        <h3>Pakiet Premium</h3>
+        <p>5 rolek wideo</p>
+        <p>Cena: 400 zł</p>
+        <small>*Przedpłata 50%*</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="kontakt">
+    <h2>Kontakt</h2>
+    <p>📧 alantyszka.biznes@gmail.com</p>
+    <p>📱 +48 797 342 634</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Alan. Wszelkie prawa zastrzeżone.</p>
+  </footer>
+</body>
+</html>
